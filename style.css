@@ -1,0 +1,613 @@
+/*
+* Theme Name: Scott Cole - Portfolio
+* Author: Scott Cole
+* Author Url: https://www.spcole.co.uk
+* Description: Created from my own bare bones starter theme.
+* Version:  1.0
+*/
+
+/*
+ * Variables
+ */
+ :root {
+    --grey-1: #232020;
+    --grey-2: #463F3F;
+    --grey-3: #756A6A;
+    --grey-4: #A29898;
+    --grey-5: #C8BEBE;
+    --grey-6: #E9E0E0;
+    --grey-7: #FAF8F8;
+
+    --main-color-1: #000D2B;
+    --main-color-2: #0A2347;
+    --main-color-3: #113263;
+    --main-color-4: #27518F;
+    --main-color-5: #4C74AC;
+    --main-color-6: #98B3DA;
+    --main-color-7: #E0E9F7;
+
+    --accent-color-1: #3B0000;
+    --accent-color-2: #5E0000;
+    --accent-color-3: #A30000;
+    --accent-color-4: #D80000;
+    --accent-color-5: #F35454;
+    --accent-color-6: #F59999;
+    --accent-color-7: #FCECEC;
+
+    --main-font: "Open Sans";
+    --secondary-font: "Open Sans";
+ }
+
+/*
+* WordPress required styles, like for images in posts
+*/
+img.alignright {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+img.alignleft {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a img.alignright {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+a img.alignleft {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+ * Page-wide layouts, such as forcing footer to bottom
+ * with flexbox.
+ */
+ body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+
+    /*overflow-y: unset;*/
+}
+
+body.admin-bar {
+    min-height: calc(100vh - 46px);
+}
+
+@media (min-width: 783px) {
+    body.admin-bar {
+        min-height: calc(100vh - 32px);
+    }
+}
+
+main.scst-main-content {
+    flex: 1;
+}
+
+footer.scst-footer {
+    flex-shrink: 0;
+}
+
+/*
+ * Fonts
+ */
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     font-family: "Science Gothic", sans-serif;
+     font-weight: 700;
+     margin-top: 1em;
+     margin-bottom: 0.5em;
+     line-height: 1.25;
+     color: var(--main-color-1);
+ }
+
+ p,
+ a,
+ ul,
+ ol {
+     font-family: "Open Sans", sans-serif;
+     font-weight: 400;
+     margin-top: 1em;
+     margin-bottom: 1em;
+     color: var(--grey-1);
+     font-size: 18px;
+ }
+ 
+ h1 {
+     font-size: 2.625rem;
+ }
+ 
+ h2 {
+     font-size: 1.75rem;
+ }
+ 
+ h3 {
+     font-size: 1.5rem;
+ }
+ 
+ h4 {
+     font-size: 1.25rem;
+ }
+ 
+ h5 {
+     font-size: 1.125rem;
+ }
+ 
+ h6 {
+     font-size: 1rem;
+ }
+ 
+ p,
+ ul,
+ ol {
+     line-height: 1.6;
+ }
+ 
+ p a,
+ li a {
+     font-size: 100%;
+ }
+ 
+ @media (min-width: 800px) {
+     h1 {
+         font-size: 3.25rem;
+     }
+ 
+     h2 {
+         font-size: 2rem;
+     }
+ 
+     h3 {
+         font-size: 1.75rem;
+     }
+ 
+     h4 {
+         font-size: 1.5rem;
+     }
+ 
+     h5 {
+         font-size: 1.25rem;
+     }
+ 
+     h6 {
+         font-size: 1rem;
+     }
+ }
+
+/*
+ * Grid layouts
+ */
+ .grid-general {
+     display: grid;
+     grid-template-columns: 5vw repeat(4, 1fr) 5vw;
+     column-gap: 5px;
+     box-sizing: border-box;
+ }
+
+ @media (min-width: 800px) {
+     .grid-general {
+        grid-template-columns: 11vw repeat(12, 1fr) 11vw;
+        column-gap: 20px;
+     }
+ }
+
+/*
+* Header
+* Includes nav and logo styles etc.
+*/
+.scst-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    transition: all 0.5s;
+    background-color: none;
+}
+
+.scst-header.background-white {
+    background-color: white;
+}
+
+body.admin-bar .scst-header {
+    top: 46px;
+}
+
+.scst-header__logo__large {
+    display: none;
+}
+
+.scst-header__logo__small {
+    display: block;
+}
+
+.scst-header__logo {
+    display: block;
+    grid-column: 2 / 3;
+    align-self: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.scst-header__nav {
+    display: flex;
+    grid-column: 4 / 6;
+    justify-content: flex-end;
+}
+
+.portfolio-logo__header {
+    text-decoration: none;
+    font-family: "Science Gothic", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+/* Small screen menu styling and button toggle */
+button#scst-main-menu-icon__open,
+button#scst-main-menu-icon__close {
+    display: block;
+    width: 50px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+button#scst-main-menu-icon__open span {
+    display: block;
+    margin-bottom: 8px;
+    width: 45px;
+    height: 5px;
+    margin-left: auto;
+    margin-right: 0;
+    background-color: var(--grey-1);
+}
+
+button#scst-main-menu-icon__open span:nth-of-type(2) {
+    width: 30px;
+}
+
+button#scst-main-menu-icon__open span:nth-of-type(3) {
+    width: 15px;
+}
+
+button#scst-main-menu-icon__close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+button#scst-main-menu-icon__close span {
+    display: block;
+    width: 50px;
+    height: 5px;
+    background-color: var(--grey-1);
+    transform: translateY(5px) rotate(45deg);
+}
+
+button#scst-main-menu-icon__close span:nth-of-type(2) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+/* Layout etc. for mobile and desktop menu */
+.scst-header__nav > #menu-main-menu-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.scst-header__nav > #menu-main-menu-wrapper ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    list-style-type: none;
+    margin: 0;
+}
+
+.scst-header__nav > #menu-main-menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    transform: translateX(-100%);
+    background-color: white;
+    transition: 0.5s all cubic-bezier(.06,.95,.69,1);
+}
+
+.scst-header__nav > #menu-main-menu-wrapper ul li {
+    position: relative;
+    padding-left: 18px;
+}
+
+.scst-header__nav > #menu-main-menu-wrapper ul li a {
+    font-family: "Science Gothic", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.scst-header__nav > #menu-main-menu-wrapper ul li a:hover {
+    color: var(--main-color-3);
+}
+
+/* Active mobile menu class */
+.scst-header__nav > #menu-main-menu-wrapper.scst-header__nav__active {
+    transform: translateX(0%);
+    opacity: 1;
+    transition: 0.5s all cubic-bezier(.06,.95,.69,1);
+}
+
+/* Dropdown menu styles */
+.scst-header__nav > #menu-main-menu-wrapper ul.sub-menu {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 18px;
+}
+
+.scst-header__nav > #menu-main-menu-wrapper ul.sub-menu {
+    transition: 0.2s all;
+}
+
+.scst-header__nav #menu-main-menu-wrapper ul.sub-menu.show-dropdown {
+    box-sizing: content-box;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	opacity: 1;
+	transition: 0.2s all;
+}
+
+.scst-header__nav .menu-main-menu__dropdown-button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--grey-1);
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.scst-header__nav ul {
+    list-style-type: none;
+}
+
+@media (min-width: 768px) {
+    body.admin-bar .scst-header {
+        top: 32px;
+    }
+}
+
+  @media (min-width: 800px) {
+    .scst-header__logo__large {
+        display: block;
+    }
+    
+    .scst-header__logo__small {
+        display: none;
+    }
+
+    .scst-header__logo {
+        grid-column: 2 / 4;
+    }
+
+    .scst-header__nav {
+        grid-column: 5 / 14;
+    }
+
+    button#scst-main-menu-icon__open {
+        display: none;
+    }
+
+    button#scst-main-menu-icon__close {
+        display: none;
+    }
+
+    .scst-header__nav > #menu-main-menu-wrapper ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0;
+    }
+
+    .scst-header__nav > #menu-main-menu-wrapper ul li {
+        box-sizing: border-box;
+        padding-top: 21px;
+        padding-bottom: 21px;
+    }
+
+    /* Removes styling used for mobile menu */
+    .scst-header__nav > #menu-main-menu-wrapper {
+        position: relative;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        transform: translateX(0);
+        background-color: transparent;
+    }
+
+    .scst-header__nav > #menu-main-menu-wrapper > ul > li > a {
+        font-size: 18px;
+    }
+
+    /* Dropdown menu styles */
+    .scst-header__nav > #menu-main-menu-wrapper ul.sub-menu {
+        position: absolute;
+        display: inline-block;
+        opacity: 0;
+        visibility: hidden;
+        width: auto;
+        height: auto;
+        min-width: 100px;
+        max-width: 250px;
+        top: 100%;
+        left: 0;
+
+        transition: 0.1s all ease;
+    }
+
+    .scst-header__nav > #menu-main-menu-wrapper ul li.menu-item-has-children:hover ul.sub-menu,
+    .scst-header__nav > #menu-main-menu-wrapper ul li.menu-item-has-children:focus ul.sub-menu,
+    .scst-header__nav > #menu-main-menu-wrapper ul li.menu-item-has-children:focus-within ul.sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.1s all ease;
+    }
+
+    .scst-header__nav .menu-main-menu__dropdown-button {
+        display: none;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    /* Can be used to change to mobile menu display at large screen sizes */
+  }
+
+/**
+* Blog layouts
+*/
+.scst-blog-general__container {
+    grid-column: 2 / -2;
+}
+
+/**
+* Page layout styles
+*/
+/* Page.php template */
+.scst-hero,
+.scst-page-template__hero,
+.scst-front-page-template__content {
+    grid-column: 1 / -1;
+}
+
+.scst-hero .scst-hero__inner,
+.scst-page-template__hero .scst-hero__inner {
+    grid-column: 2 / span 4;
+}
+
+.scst-page-template__content {
+    grid-column: 2 / -2;
+}
+
+@media (min-width: 800px) {
+    .scst-hero .scst-hero__inner,
+    .scst-page-template__hero .scst-hero__inner {
+        grid-column: 2 / span 5;
+    }
+}
+
+/**
+* Home page
+*/
+.home-title {
+    font-size: 4rem;
+}
+
+.scst-hero__inner p {
+    font-size: 22px;
+}
+
+.scst-front-page-template__hero {
+    background-image: linear-gradient(to top right, rgba(223, 228, 247, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    padding-top: 150px;
+    padding-bottom: 150px;
+    align-items: center;
+}
+
+.scst-front-page-template__hero__img {
+    grid-column: 2 / span 4;
+    width: 100%;
+    height: auto;
+}
+
+.scst-front-page-template__content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.scst-front-page-template__content__title {
+    grid-column: 2 / span 4;
+}
+
+.scst-front-page-template__content__inner {
+    grid-column: 2 / span 4;
+}
+
+.scst-front-page-template__content__list {
+    grid-column: 2 / span 4;
+}
+
+.scst-front-page-template__content__list ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.scst-front-page-template__content__list ul li {
+    position: relative;
+}
+
+.scst-front-page-template__content__list ul li:before {
+    display: block;
+    content: "";
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    left: -20px;
+    top: 8px;
+    background-image: url("assets/img/square-bullet.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: visible;
+}
+
+@media (min-width: 800px) {
+    .scst-front-page-template__content__title {
+        grid-column: 2 / span 12;
+    }
+
+    .scst-front-page-template__content__inner {
+        grid-column: 8 / 14;
+    }
+
+    .scst-front-page-template__content__list {
+        grid-column: 2 / span 5;
+    }
+
+    .scst-front-page-template__hero__img {
+        grid-column: 9 / span 5;
+        margin-bottom: 0px;
+    }
+}
