@@ -77,6 +77,11 @@ a img.aligncenter {
  * Page-wide layouts, such as forcing footer to bottom
  * with flexbox.
  */
+
+ * {
+    box-sizing: border-box;
+ }
+
  body {
     display: flex;
     flex-direction: column;
@@ -609,5 +614,26 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
     .scst-front-page-template__hero__img {
         grid-column: 9 / span 5;
         margin-bottom: 0px;
+    }
+}
+
+/*
+* Footer styling
+*/
+
+.scst-footer {
+    background-color: var(--grey-6);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.scst-footer__contact {
+    grid-column: 2 / span 4;
+}
+
+@media (min-width: 800px) {
+    .scst-footer__contact {
+        grid-column: 8 / span 6;
+        text-align: end;
     }
 }
