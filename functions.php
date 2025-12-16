@@ -54,3 +54,6 @@ add_action('wp_enqueue_scripts', 'scst_enqueue_scripts');
  * Includes for additional PHP files, such as those for the
  * custom post types etc. generally container in /inc
  */
+
+// Include Custom Post Type files
+include "inc/custom-post-types/projects-cpt.php";

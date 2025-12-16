@@ -172,6 +172,11 @@ footer.scst-footer {
  li a {
      font-size: 100%;
  }
+
+ a:hover {
+    transition: 0.2s all;
+    color: var(--main-color-3);
+ }
  
  @media (min-width: 800px) {
      h1 {
@@ -622,7 +627,7 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
 */
 
 .scst-footer {
-    background-color: var(--grey-6);
+    background-color: var(--grey-7);
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -631,9 +636,34 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
     grid-column: 2 / span 4;
 }
 
+.scst-footer__contact__email {
+    font-variant: small-caps;
+    text-decoration: none;
+    font-family: "Science Gothic", open-sans;
+}
+
+.scst-footer__contact__img {
+    grid-column: 2 / span 4;
+}
+
+.scst-footer__contact__img a {
+    display: block;
+}
+
+.scst-footer__contact__img img {
+    display: block;
+    width: 42px;
+    height: 42px;
+}
+
 @media (min-width: 800px) {
     .scst-footer__contact {
         grid-column: 8 / span 6;
         text-align: end;
+    }
+
+    .scst-footer__contact__img {
+        grid-column: 8 / span 6;
+        justify-items: end;
     }
 }
