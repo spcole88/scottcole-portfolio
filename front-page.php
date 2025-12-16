@@ -11,8 +11,8 @@
             professional world.</p>
     </div>
     <img class="scst-front-page-template__hero__img"
-        src="<?php echo get_template_directory_uri(); ?>/assets/img/me-cartoon-1.png"
-        alt="A cartoon rendering of Scott Cole.">
+        src="<?php echo get_template_directory_uri(); ?>/assets/img/me-and-a.jpg"
+        alt="A photo of me and my son out for a walk.">
 </section>
 
 <section class="scst-front-page-template__content grid-general">
