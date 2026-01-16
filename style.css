@@ -87,7 +87,6 @@ a img.aligncenter {
     flex-direction: column;
     min-height: 100vh;
     background-color: white;
-
     /*overflow-y: unset;*/
 }
 
@@ -113,11 +112,17 @@ footer.scst-footer {
  * Fonts
  */
  h1,
+ h1 a,
  h2,
+ h2 a,
  h3,
+ h3 a,
  h4,
+ h4 a,
  h5,
- h6 {
+ h5 a,
+ h6,
+ h6 a {
      font-family: "Science Gothic", sans-serif;
      font-weight: 700;
      margin-top: 1em;
@@ -138,28 +143,43 @@ footer.scst-footer {
      font-size: 18px;
  }
  
- h1 {
+ h1,
+ h1 a {
      font-size: 2.625rem;
  }
  
- h2 {
+ h2,
+ h2 a {
      font-size: 1.75rem;
  }
  
- h3 {
+ h3,
+ h3 a {
      font-size: 1.5rem;
  }
  
- h4 {
+ h4,
+ h4 a {
      font-size: 1.25rem;
  }
  
- h5 {
+ h5,
+ h5 a {
      font-size: 1.125rem;
  }
  
- h6 {
+ h6,
+ h6 a {
      font-size: 1rem;
+ }
+
+ h1 a,
+ h2 a,
+ h3 a,
+ h4 a,
+ h5 a,
+ h6 a {
+    text-decoration: none;
  }
  
  p,
@@ -557,7 +577,7 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
 * Home page
 */
 .home-title {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .scst-hero__inner {
@@ -624,15 +644,28 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
 }
 
 .scst-front-page-template__work {
+    background-color: var(--main-color-4);
     grid-column: 1 / -1;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .scst-front-page-template__work__card {
+    background-color: white;
+    padding: 20px;
     grid-column: 2 / span 4;
+    margin-bottom: 50px;
+}
+
+.scst-front-page-template__work__card:last-of-type {
+    margin-bottom: 0;
 }
 
 .scst-front-page-template__work__card img {
-    grid-column: 1 / span 4;
+    display: block;
+    width: 100%;
+    height: auto;
+    grid-column: 1 / span 12;
 }
 
 .scst-front-page-template__work__card__content {
@@ -669,7 +702,7 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
     }
 
     .scst-front-page-template__work__card__content {
-        grid-column: 6 / span 6;
+        grid-column: 1 / -1;
     }
 }
 
@@ -683,6 +716,15 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
     .scst-front-page-template__hero .scst-hero__inner {
         grid-column: 2 / span 5;
         padding-bottom: 100px;
+    }
+
+    .scst-front-page-template__work__card img {
+        align-self: center;
+        grid-column: 1 / span 5;
+    }
+
+    .scst-front-page-template__work__card__content {
+        grid-column: 6 / span 6;
     }
 }
 
