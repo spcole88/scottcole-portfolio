@@ -8,6 +8,11 @@
 
 /*
  * Variables
+ * New colours to add:
+ * BBBFBF
+ * 878787
+ * 05AD98
+ * FFFFFF
  */
  :root {
     --grey-1: #232020;
@@ -36,6 +41,10 @@
 
     --main-font: "Open Sans";
     --secondary-font: "Open Sans";
+
+    --main-color-new: #05AD98;
+    --grey-new-1: #BBBFBF;
+    --grey-new-2: #878787;
  }
 
 /*
@@ -195,7 +204,7 @@ footer.scst-footer {
 
  a:hover {
     transition: 0.2s all;
-    color: var(--main-color-3);
+    color: var(--main-color-new);
  }
  
  @media (min-width: 800px) {
@@ -222,6 +231,40 @@ footer.scst-footer {
      h6 {
          font-size: 1rem;
      }
+ }
+
+ /*
+ * Buttons and stuff that are not page specific
+ */
+
+ .scst-button {
+    appearance: none;
+    border: none;
+    color: #ffffff;
+    background-color: var(--main-color-new);
+    padding: 15px 20px;
+    border-radius: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+
+ .scst-button:hover {
+    transition: 0.2s all;
+    color: #ffffff;
+    background-color: #038071;
+ }
+
+ .scst-button.scst-button-light {
+    background-color: #ffffff;
+    color: #000000;
+ }
+
+ .scst-button.scst-button-light:hover {
+    background-color: #ffffff;
+    color: var(--main-color-new);
  }
 
 /*
@@ -396,7 +439,7 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
 }
 
 .scst-header__nav > #menu-main-menu-wrapper ul li a:hover {
-    color: var(--main-color-3);
+    color: var(--main-color-new);
 }
 
 /* Active mobile menu class */
@@ -541,8 +584,46 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
 /**
 * Blog layouts
 */
+/* Blog archive page */
 .scst-blog-general__container {
     grid-column: 2 / -2;
+    margin-bottom: 100px;
+}
+
+.scst-index__hero {
+    padding-top: 150px;
+}
+
+.scst-blog-general {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.scst-blog-general::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+}
+
+.scst-blog-general:last-of-type::after {
+    display: none;
+}
+
+@media (min-width: 800px) {
+    .scst-blog-general__container {
+        grid-column: 2 / -2;
+    }
+}
+
+@media (min-width: 1200px) {
+    .scst-blog-general__container {
+        grid-column: 2 / 10;
+    }
 }
 
 /**
@@ -644,17 +725,33 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
 }
 
 .scst-front-page-template__work {
-    background-color: var(--main-color-4);
+    background-color: var(--main-color-new);
     grid-column: 1 / -1;
     padding-top: 100px;
     padding-bottom: 100px;
 }
 
 .scst-front-page-template__work__card {
-    background-color: white;
+    position: relative;
     padding: 20px;
     grid-column: 2 / span 4;
     margin-bottom: 50px;
+}
+
+.scst-front-page-template__work__card::after {
+    position: absolute;
+    content: "";
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    width: 80%;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scst-front-page-template__work__card:last-of-type::after {
+    display: none;
 }
 
 .scst-front-page-template__work__card:last-of-type {
@@ -669,7 +766,13 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
 }
 
 .scst-front-page-template__work__card__content {
+    color: #ffffff;
     grid-column: 1 / -1;
+}
+
+.scst-front-page-template__work__card__content p,
+.scst-front-page-template__work__card__content h3 a {
+    color: #ffffff;
 }
 
 @media (min-width: 800px) {
@@ -698,7 +801,7 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
     }
 
     .scst-front-page-template__work__card {
-        grid-column: 4 / span 8;
+        grid-column: 2 / 14;
     }
 
     .scst-front-page-template__work__card__content {
@@ -724,7 +827,11 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
     }
 
     .scst-front-page-template__work__card__content {
-        grid-column: 6 / span 6;
+        grid-column: 7 / span 5;
+    }
+
+    .scst-front-page-template__work__card::after {
+        bottom: -30px;
     }
 }
 

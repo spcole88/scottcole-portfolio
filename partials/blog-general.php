@@ -6,13 +6,14 @@
 ?>
 <div class="scst-blog-general">
     <?php
-    $thumbnail = get_the_post_thumbnail_url(get_the_id(), 'medium');
-    if ($thumbnail) :
+    // Dont want to display featured images on blogs, want a simpler look
+    //$thumbnail = get_the_post_thumbnail_url(get_the_id(), 'medium');
+    //if ($thumbnail) :
     ?>
-    <div class="scst-blog-general__img" style="background-image: url(<?php echo $thumbnail; ?>);">
-    </div>
+    <!--<div class="scst-blog-general__img" style="background-image: url(<?php // echo $thumbnail; ?>);">
+    </div>-->
     <?php
-    endif;
+    //endif;
     ?>
     <?php the_date('', '<p class="scst-blog-general__date">', '</p>'); ?>
     <a href="<?php the_permalink(); ?>">
@@ -25,12 +26,15 @@
 
     <?php the_category(', '); ?>
 
-    <?php $authorName = get_the_author_meta('display_name');
+    <?php 
+    //$authorName = get_the_author_meta('display_name');
+    /*
     if ($authorName !== '') {
         echo '<p class="scst-blog-general__author">';
         echo $authorName;
         echo '</p>';
     }
+        */
     ?>
 
 </div>

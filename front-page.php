@@ -61,6 +61,7 @@ $projects_query = new WP_Query($args);
         <div class="scst-front-page-template__work__card__content">
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <?php the_excerpt(); ?>
+            <a href="<?php the_permalink(); ?>" class="scst-button scst-button-light">Read more</a>
         </div>
     </div>
     <?php 

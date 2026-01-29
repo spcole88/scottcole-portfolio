@@ -1,10 +1,9 @@
 <?php get_header();?>
 
-<section class="scst-hero scst-index__hero grid-general" style="
-
-">
+<section class="scst-hero scst-index__hero grid-general">
     <div class="scst-hero__inner">
         <h1><?php echo esc_html(single_post_title()); ?></h1>
+        <p>Where I post about things I've learned or tried out, not necessarily bigger specific projects.</p>
     </div>
 </section>
 
