@@ -15,7 +15,7 @@
     <?php
     //endif;
     ?>
-    <?php the_date('', '<p class="scst-blog-general__date">', '</p>'); ?>
+    <p class="scst-blog-general__date"><?php echo get_the_date(); ?></p>
     <a href="<?php the_permalink(); ?>">
         <h2>
             <?php the_title(); ?>
