@@ -690,12 +690,15 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
     left: 0px;
 }
 
-.single-project header a {
+.single-project header a,
+.home header a {
     color: white;
 }
 
 .single-project header a:hover,
-.single-project .scst-header__nav > #menu-main-menu-wrapper ul li a:hover {
+.single-project .scst-header__nav > #menu-main-menu-wrapper ul li a:hover,
+.home header a:hover,
+.home .scst-header__nav > #menu-main-menu-wrapper ul li a:hover {
     color: black;
 }
 

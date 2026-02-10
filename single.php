@@ -13,6 +13,10 @@
 <section class="scst-single-template__content">
     <div class="scst-single-template__content__inner">
         <?php the_content(); ?>
+        <div class="scst-single-template__author-date">
+            <p><?php the_date(); ?></p>
+            <p>by <?php the_author(); ?></p>
+        </div>
     </div>
 </section>
 
