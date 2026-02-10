@@ -2,7 +2,7 @@
 
 <?php if (have_posts()): while (have_posts()): the_post();?>
 
-<section class="scst-hero scst-front-page-template__hero grid-general">
+<section class="scst-hero scst-dark-hero scst-front-page-template__hero grid-general">
     <div class="scst-hero__inner">
         <h1 class="home-title"><?php the_field("hero_title"); ?></h1>
         <p><?php the_field("hero_content"); ?></p>

@@ -1,9 +1,9 @@
 <?php get_header();?>
 
-<section class="scst-hero scst-hero__blog-archive scst-index__hero grid-general">
+<section class="scst-hero scst-hero__project-archive scst-index__hero grid-general">
     <div class="scst-hero__inner">
-        <h1><?php echo esc_html(single_post_title()); ?></h1>
-        <p>Where I post about things I've learned or explored, not necessarily bigger specific projects.</p>
+        <h1>Projects</h1>
+        <p>This is a collection of my projects. Some may be client work from before my hiatus to raise my son. Some may be personal projects as I get back into web development.</p>
     </div>
 </section>
 

@@ -321,6 +321,15 @@ footer.scst-footer {
     background-color: white;
 }
 
+.scst-header.background-white a {
+    color: black !important;
+    transition: 0.3s all;
+}
+
+.scst-header.background-white a:hover {
+    color: var(--main-color-new) !important;
+}
+
 body.admin-bar .scst-header {
     top: 46px;
 }
@@ -599,6 +608,11 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
 * Blog layouts, archives and singles.
 */
 
+.scst-hero__blog-archive h1,
+.scst-hero__project-archive h1 {
+    font-size: 4em;
+}
+
 .scst-blog-general__container {
     grid-column: 2 / -2;
     margin-bottom: 100px;
@@ -647,6 +661,44 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
     margin-bottom: 100px;
 }
 
+.scst-single-template__hero__project {
+    background-color: var(--main-color-new);
+    margin-bottom: 50px;
+}
+
+.scst-single-template__hero__project h1 {
+    font-size: 3em;
+    color: white;
+}
+
+.scst-single-template__author-date {
+    position: relative;
+    margin-top: 75px;
+}
+
+.scst-single-template__author-date p {
+    font-style: italic;
+}
+
+.scst-single-template__author-date::before {
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 50%;
+    top: -20px;
+    left: 0px;
+}
+
+.single-project header a {
+    color: white;
+}
+
+.single-project header a:hover,
+.single-project .scst-header__nav > #menu-main-menu-wrapper ul li a:hover {
+    color: black;
+}
+
 @media (min-width: 800px) {
     .scst-blog-general__container {
         grid-column: 2 / -2;
@@ -659,6 +711,10 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
 
     .scst-single-template__content {
         grid-column: 2 / span 10;
+    }
+
+    .scst-single-template__hero__project h1 {
+        font-size: 4em;
     }
 }
 
@@ -723,8 +779,13 @@ button#scst-main-menu-icon__close span:nth-of-type(2) {
     font-size: 22px;
 }
 
+.scst-dark-hero .scst-hero__inner h1,
+.scst-dark-hero .scst-hero__inner p {
+    color: white;
+}
+
 .scst-front-page-template__hero {
-    background-image: linear-gradient(to top right, rgba(5, 173, 152, 0.3) 0%, rgba(255, 255, 255, 1) 100%);
+    background-image: linear-gradient(to top right, rgba(5, 173, 152, 1) 0%, rgba(5, 237, 208, 1) 100%);
     padding-top: 150px;
     padding-bottom: 0xp;
     align-items: end;
