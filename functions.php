@@ -34,6 +34,11 @@ function scst_enqueue_stylesheets()
     // Fonts
     wp_enqueue_style('font1', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&display=swap', array(), $ver);
     wp_enqueue_style('font2', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Science+Gothic:wght@100..900&display=swap', array(), $ver);
+
+    // Load calculator stylesheet on post slug for calculator
+    if (is_single("simple-calculator")) {
+        wp_enqueue_style("calculator-stylsheet", get_template_directory_uri() . "/assets/calculator/calculator-style.css", array(), $breakCache);
+    }
 }
 
 add_action('wp_enqueue_scripts', 'scst_enqueue_stylesheets');
@@ -46,6 +51,11 @@ function scst_enqueue_scripts()
     $ver = '1.0.16';
     $breakCache = time();
     wp_enqueue_script('scst-script', get_template_directory_uri() . '/assets/js/script.js', array(), $breakCache, true);
+
+    // Load calculator script on post slug for calculator
+    if (is_single("simple-calculator")) {
+        wp_enqueue_script("calculator-script", get_template_directory_uri() . "/assets/calculator/calculator-script.js", array(), $breakCache, true);
+    }
 }
 
 add_action('wp_enqueue_scripts', 'scst_enqueue_scripts');
