@@ -39,6 +39,11 @@ function scst_enqueue_stylesheets()
     if (is_single("simple-calculator")) {
         wp_enqueue_style("calculator-stylsheet", get_template_directory_uri() . "/assets/calculator/calculator-style.css", array(), $breakCache);
     }
+
+    // Load To Do app script on post slug for the to do app
+    if (is_single("simple-to-do-app")) {
+        wp_enqueue_style("to-do-app-stylsheet", get_template_directory_uri() . "/assets/to-do/to-do-style.css", array(), $breakCache);
+    }
 }
 
 add_action('wp_enqueue_scripts', 'scst_enqueue_stylesheets');
@@ -55,6 +60,11 @@ function scst_enqueue_scripts()
     // Load calculator script on post slug for calculator
     if (is_single("simple-calculator")) {
         wp_enqueue_script("calculator-script", get_template_directory_uri() . "/assets/calculator/calculator-script.js", array(), $breakCache, true);
+    }
+
+    // Load To Do app script on post slug for the to do app
+    if (is_single("simple-to-do-app")) {
+        wp_enqueue_script("to-do-app-script", get_template_directory_uri() . "/assets/to-do/to-do-script.js", array(), $breakCache, true);
     }
 }
 
