@@ -65,6 +65,9 @@ function scst_enqueue_scripts()
     // Load To Do app script on post slug for the to do app
     if (is_single("simple-to-do-app")) {
         wp_enqueue_script("to-do-app-script", get_template_directory_uri() . "/assets/to-do/to-do-script.js", array(), $breakCache, true);
+        wp_localize_script("to-do-app-script", "toDoData", array(
+            "templateUrl" => get_template_directory_uri()
+        ));
     }
 }
 
