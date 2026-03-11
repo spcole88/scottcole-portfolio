@@ -19,6 +19,11 @@
 
         <nav class="scst-header__nav">
             <div id="menu-main-menu-wrapper">
+                <div class="scst-menu-slide"></div>
+                <div class="scst-menu-slide"></div>
+                <div class="scst-menu-slide"></div>
+                <div class="scst-menu-slide"></div>
+                <div class="scst-menu-slide"></div>
                 <?php
                 wp_nav_menu(array(
                     'menu' => 'Main Menu',
